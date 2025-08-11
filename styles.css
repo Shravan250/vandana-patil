@@ -9,6 +9,9 @@ body {
   background: #fff;
   color: #1d3351;
   line-height: 1.6;
+  min-height: 100vh; /* Keep for sticky footer */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header Section */
@@ -23,6 +26,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 15px 16px;
+  gap: 20px;
 }
 
 .header-content {
@@ -38,6 +42,7 @@ header {
   padding: 5px;
   border-radius: 10px;
   border: 1px solid #eaeaea;
+  flex-shrink: 0; /* Prevents logo from shrinking */
 }
 
 .header-text {
@@ -71,6 +76,7 @@ header {
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid #d5d5d5;
+  flex-shrink: 0; /* Prevents photo from shrinking */
 }
 
 /* Navigation */
@@ -83,7 +89,8 @@ nav {
 .nav-list {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
+  gap: 15px;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -93,8 +100,8 @@ nav {
   text-decoration: none;
   color: #1d3557;
   font-weight: 500;
-  font-size: 1.07rem;
-  padding: 11px 24px 7px 24px;
+  font-size: 1rem; /* Corrected typo: "1 rem" -> "1rem" */
+  padding: 11px 14px 7px 14px;
   display: inline-block;
   border-radius: 4px 4px 0 0;
   transition: background 0.14s;
@@ -105,11 +112,13 @@ nav {
   background: #dff1ff;
   border-bottom: 3px solid #2b4674;
   color: #234978;
+  padding-bottom: 4px;
 }
 
 /* Main Content */
 main {
-  padding: 10px 0;
+  flex-grow: 1; /* For sticky footer */
+  width: 100%;
 }
 
 .section {
@@ -118,7 +127,6 @@ main {
   margin: 38px auto 24px auto;
   padding: 18px 24px;
   background: #fff;
-  min-height: 350px;
 }
 
 .section.active {
@@ -206,70 +214,11 @@ main {
   border: 2px solid #2b4674;
 }
 
-.member-image {
-  width: 102px;
-  height: 102px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #22417a;
-}
-
-/* Info Boxes */
-.news-box {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 4px solid #2b4674;
-}
-
-.highlight-box {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 20px;
-}
-
-.opportunity-box {
-  background: #fff3cd;
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 4px solid #ffc107;
-  margin-top: 20px;
-}
-
-.news-title {
-  color: #2b4674;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.opportunity-title {
-  color: #856404;
-  margin-top: 0;
-}
-
-/* Lists */
-.content-list {
-  margin-left: 18px;
-  margin-bottom: 18px;
-}
-
-.content-list li {
-  margin-bottom: 7px;
-}
-
-.project-list {
-  margin-left: 22px;
-}
-
-.project-list li {
-  margin-bottom: 10px;
-}
-
 /* Member Cards */
 .member-card {
   width: 220px;
   text-align: center;
+  margin: 0 auto; /* Center card when container stacks */
 }
 
 .member-name {
@@ -281,6 +230,22 @@ main {
 .member-details {
   font-size: 0.97em;
   margin-top: 5px;
+}
+
+.highlight-box {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px 0px;
+  border-left: 4px solid #2b4674;
+}
+
+.opportunity-box {
+  background: #fff3cd;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #ffc107;
+  margin-top: 20px;
 }
 
 /* Contact Layout */
@@ -305,43 +270,6 @@ main {
   line-height: 1.8;
 }
 
-/* Responsive Design */
-@media (max-width: 700px) {
-  .header-container,
-  .section {
-    padding: 10px;
-  }
-
-  .logo {
-    height: 60px;
-    width: 60px;
-  }
-
-  .profile-photo {
-    height: 60px;
-    width: 48px;
-  }
-
-  .nav-list {
-    gap: 6px;
-  }
-
-  .nav-link {
-    padding: 8px 7px 6px 7px;
-    font-size: 0.97rem;
-  }
-
-  .section-image {
-    width: 100%;
-  }
-
-  .flex-container,
-  .flex-container-start,
-  .contact-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
 footer {
   text-align: center;
   padding: 20px;
@@ -350,4 +278,120 @@ footer {
   border-top: 1px solid #ddd;
   font-size: 14px;
   color: #2b4674;
+}
+
+.content-list,
+.project-list {
+  padding-left: 22px;
+  margin-bottom: 18px;
+}
+
+.content-list li,
+.project-list li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+/* ========================================= */
+/* =========== Responsive Design =========== */
+/* ========================================= */
+
+/* Tablet Styles (Screens up to 992px wide) */
+@media (max-width: 992px) {
+  .header-content {
+    gap: 16px;
+  }
+
+  .logo {
+    height: 90px;
+  }
+
+  .profile-photo {
+    height: 90px;
+    width: 90px;
+  }
+
+  .group-name {
+    font-size: 1.2rem;
+  }
+
+  .university-name,
+  .researcher-name {
+    font-size: 1rem;
+  }
+
+  .nav-list {
+    gap: 10px;
+  }
+}
+
+/* Mobile Styles (Screens up to 767px wide) */
+@media (max-width: 767px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    order: 2; /* Puts text below the logo */
+  }
+
+  .profile-photo {
+    order: 1; /* Puts profile photo at the top */
+    height: 100px;
+    width: 100px;
+  }
+
+  .logo {
+    display: none; /* Hide the DYPIU logo to save space, assuming profile photo is enough */
+  }
+
+  .nav-list {
+    gap: 6px 10px; /* row-gap, column-gap */
+    padding: 5px 0;
+  }
+
+  .nav-link {
+    padding: 8px 10px 5px 10px;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    padding-left: 12px;
+    border-left-width: 6px;
+    margin-bottom: 1.2rem;
+  }
+
+  .flex-container,
+  .flex-container-start,
+  .contact-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .section-image,
+  .profile-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  footer {
+    margin-top: 25px;
+  }
+
+  .news-box,
+  .highlight-box,
+  .opportunity-box {
+    padding: 15px;
+  }
 }
