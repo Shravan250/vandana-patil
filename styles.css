@@ -32,7 +32,7 @@ header {
 }
 
 .logo {
-  height: 90px;
+  height: 120px;
   width: auto;
   background: white;
   padding: 5px;
@@ -349,5 +349,5 @@ footer {
   background-color: #dff1ff;
   border-top: 1px solid #ddd;
   font-size: 14px;
-  color: white;
+  color: #2b4674;
 }
