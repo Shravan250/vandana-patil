@@ -72,7 +72,11 @@
           >
         </li>
 
-        <li><a href="#" data-section="vacancy" class="nav-link">Vacancy</a></li>
+        <li>
+          <a href="#" data-section="certificate" class="nav-link"
+            >Certificates</a
+          >
+        </li>
 
         <li><a href="#" data-section="gallery" class="nav-link">Gallery</a></li>
 
@@ -479,30 +483,231 @@
         </div>
       </section>
 
-      <section id="vacancy" class="section">
-        <h1 class="section-title">Vacancy</h1>
+      <section id="certificate" class="section">
+        <div class="certificate-gallery">
+          <h1 class="section-title">Certificate Gallery</h1>
 
-        <p class="text-secondary">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          dignissim, sem non consequat tincidunt, erat lacus mollis orci, et
-          finibus orci justo id quam. Proin at varius ex.
-        </p>
+          <div class="gallery-stats">
+            <div class="stat-item">
+              <span class="stat-number" id="totalCertificates">101</span>
+              <div class="stat-label">Total Certificates</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="totalCategories">6</span>
+              <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24</span>
+              <div class="stat-label">ATAL FDP</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">77</span>
+              <div class="stat-label">Other Certificates</div>
+            </div>
+          </div>
 
-        <div class="opportunity-box">
-          <h3 class="opportunity-title">Opportunities Available:</h3>
+          <div class="search-filter-bar">
+            <div class="search-box">
+              <input
+                type="text"
+                class="search-input"
+                id="searchInput"
+                placeholder="Search certificates..."
+              />
+            </div>
+            <div class="view-toggle">
+              <button class="view-btn active" data-view="grid">Grid</button>
+              <button class="view-btn" data-view="list">List</button>
+            </div>
+          </div>
 
-          <ul class="content-list">
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <!-- Category Overview -->
+          <div class="category-overview">
+            <div class="category-grid" id="categoryGrid">
+              <div class="category-card" data-category="atal-fdp">
+                <div class="category-header">
+                  <h3 class="category-title">ATAL FDP</h3>
+                  <span class="certificate-count">24</span>
+                </div>
+                <div class="category-description">
+                  All India Council for Technical Education (AICTE) Training and
+                  Learning (ATAL) Academy Faculty Development Programs
+                </div>
+                <div class="category-preview">
+                  <div class="preview-item">PDF</div>
+                  <div class="preview-item">PDF</div>
+                  <div class="preview-item">PDF</div>
+                </div>
+              </div>
 
-            <li>Nullam eget felis eget nunc lobortis rhoncus.</li>
+              <div class="category-card" data-category="fdp-training">
+                <div class="category-header">
+                  <h3 class="category-title">FDPs & Training Courses</h3>
+                  <span class="certificate-count">45</span>
+                </div>
+                <div class="category-description">
+                  Faculty Development Programs covering AI/ML, Programming,
+                  Innovation, Materials & Manufacturing, and General Teaching
+                </div>
+                <div class="category-preview">
+                  <div class="preview-item">PDF</div>
+                  <div class="preview-item">JPG</div>
+                  <div class="preview-item">PNG</div>
+                </div>
+              </div>
 
-            <li>Cras non dolor eu nulla egestas aliquet.</li>
-          </ul>
+              <div class="category-card" data-category="conferences-workshops">
+                <div class="category-header">
+                  <h3 class="category-title">Conferences & Workshops</h3>
+                  <span class="certificate-count">35</span>
+                </div>
+                <div class="category-description">
+                  Participation and presentation certificates from various
+                  academic conferences and workshops in Physics, Materials
+                  Science, and interdisciplinary fields
+                </div>
+                <div class="category-preview">
+                  <div class="preview-item">PDF</div>
+                  <div class="preview-item">JPG</div>
+                  <div class="preview-item">PDF</div>
+                </div>
+              </div>
 
-          <p class="text-small">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            sed diam eget risus varius blandit sit amet non magna.
-          </p>
+              <div class="category-card" data-category="reviewer-evaluator">
+                <div class="category-header">
+                  <h3 class="category-title">Reviewer & Evaluator</h3>
+                  <span class="certificate-count">15</span>
+                </div>
+                <div class="category-description">
+                  Recognition certificates for contributions as reviewer,
+                  evaluator, and peer reviewer for various conferences and
+                  competitions
+                </div>
+                <div class="category-preview">
+                  <div class="preview-item">PDF</div>
+                  <div class="preview-item">PDF</div>
+                  <div class="preview-item">PDF</div>
+                </div>
+              </div>
+
+              <div class="category-card" data-category="awards-recognition">
+                <div class="category-header">
+                  <h3 class="category-title">Awards & Recognition</h3>
+                  <span class="certificate-count">20</span>
+                </div>
+                <div class="category-description">
+                  Awards, honors, and recognition certificates for teaching
+                  excellence, research contributions, and professional
+                  achievements
+                </div>
+                <div class="category-preview">
+                  <div class="preview-item">PDF</div>
+                  <div class="preview-item">JPG</div>
+                  <div class="preview-item">PDF</div>
+                </div>
+              </div>
+
+              <div class="category-card" data-category="institutional">
+                <div class="category-header">
+                  <h3 class="category-title">Institutional Events</h3>
+                  <span class="certificate-count">15</span>
+                </div>
+                <div class="category-description">
+                  Certificates from specific university and institutional
+                  events, orientation programs, and collaborative activities
+                </div>
+                <div class="category-preview">
+                  <div class="preview-item">PDF</div>
+                  <div class="preview-item">PDF</div>
+                  <div class="preview-item">PDF</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificates Container -->
+          <div class="certificates-container" id="certificatesContainer">
+            <div class="category-breadcrumb">
+              <button class="breadcrumb-btn" onclick="showCategoryOverview()">
+                ← Back to Categories
+              </button>
+              <span id="currentCategoryTitle">Category Name</span>
+            </div>
+
+            <div class="certificates-grid" id="certificatesGrid">
+              <!-- Certificates will be dynamically loaded here -->
+            </div>
+
+            <div class="certificates-list" id="certificatesList">
+              <!-- List view certificates will be dynamically loaded here -->
+            </div>
+
+            <div class="no-results" id="noResults" style="display: none">
+              <div class="no-results-icon">🔍</div>
+              <h3>No certificates found</h3>
+              <p>Try adjusting your search terms</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="certificateModal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="modalTitle">Certificate Title</h3>
+              <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-certificate" id="modalCertificate">
+                <!-- Certificate preview will be loaded here -->
+                <div
+                  style="
+                    height: 400px;
+                    background: linear-gradient(
+                      135deg,
+                      #f8f9fa 0%,
+                      #e9ecef 100%
+                    );
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 8px;
+                  "
+                >
+                  <div style="text-align: center; color: #666">
+                    <div style="font-size: 4rem; margin-bottom: 15px">📜</div>
+                    <h4>Certificate Preview</h4>
+                    <p>Click download to view full certificate</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-info">
+                <p>
+                  <strong>Filename:</strong>
+                  <span id="modalFilename">certificate.pdf</span>
+                </p>
+                <p>
+                  <strong>Category:</strong>
+                  <span id="modalCategory">Category Name</span>
+                </p>
+                <button
+                  style="
+                    margin-top: 15px;
+                    padding: 10px 20px;
+                    background: #2b4674;
+                    color: white;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    font-size: 1rem;
+                  "
+                  onclick="downloadCertificate()"
+                >
+                  📥 Download Certificate
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -584,5 +789,6 @@
         });
       });
     </script>
+    <script src="certificates.js"></script>
   </body>
 </html>
