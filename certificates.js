@@ -355,7 +355,7 @@ let filteredCertificates = [];
 // Initialize the gallery
 document.addEventListener("DOMContentLoaded", function () {
   setupEventListeners();
-  updateStats();
+  //   updateStats();
 });
 
 function setupEventListeners() {
